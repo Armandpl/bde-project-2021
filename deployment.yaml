@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eth-bc
+  labels:
+    app: ebc
+# pod 1: bootnode
+# need to be init w/ genesis.json
+# persistent storage for blockchain state
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ebc
+  template:
+    metadata:
+      labels:
+        app: ebc
+    spec:
+      containers:
+      - name: geth
+        image: ethereum/client-go:alltools-v1.10.14-amd64
+        - containerPort: 80
+# pod 2: member node
+# need to be init w/ genesis.json
+
+
+# pod 3: standalone miner
+# need to be init w/ genesis.json
+
+# pod 4: pool node
+
+# pod 5: pool member
