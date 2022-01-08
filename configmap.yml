@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ebc
+  namespace: ebc
+  labels:
+    app: eth-bc
+data:
+  networkid: "230193229"
+  genesis.json: | 
+    {
+      "config": {
+        "chainId": 230193229,
+        "homesteadBlock": 0,
+        "eip150Block": 0,
+        "eip155Block": 0,
+        "eip158Block": 0,
+        "byzantiumBlock": 0,
+        "constantinopleBlock": 0,
+        "petersburgBlock": 0,
+        "istanbulBlock": 0,
+        "berlinBlock": 0,
+        "londonBlock": 0
+      },
+      "alloc": {
+          "0xa393eeb1d415e9498fd58752b2db63c9b0b37d20": {
+              "balance": "111111111"
+          }
+      },
+      "coinbase": "0x0000000000000000000000000000000000000000",
+      "difficulty": "0x20000",
+      "extraData": "",
+      "gasLimit": "0x2fefd8",
+      "nonce": "0x0000000000023042",
+      "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "timestamp": "0x00"
+    }
