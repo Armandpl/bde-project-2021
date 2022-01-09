@@ -42,6 +42,14 @@ spec:
         volumeMounts:
         - name: data
           mountPath: /root/.ethereum
+      - name: miningcore
+        image: r3gistry/miningcore:47
+        imagePullPolicy: IfNotPresent
+        args:
+        - "-c /config/config.json"
+        volumeMounts:
+        - name: config
+          mountPath: /config
       initContainers:
       - name: init-genesis
         image: ethereum/client-go:alltools-v1.10.14-amd64
