@@ -4,6 +4,7 @@ KOVACEVIC Veljko
 BDA GR02
 
 ## Quickstart/How to run
+- create namespace
 
 ## Motivations
 
